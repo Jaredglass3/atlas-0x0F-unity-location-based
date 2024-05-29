@@ -21,7 +21,9 @@ public class LocationLogger : MonoBehaviour
             yield break;
         }
 
-        Input.location.Start();
+        Debug.Log("Location services enabled"); // New debug log to indicate service is enabled
+
+        Input.location.Start(10f,1f);
 
         int maxWait = 20;
         while (Input.location.status == LocationServiceStatus.Initializing && maxWait > 0)
